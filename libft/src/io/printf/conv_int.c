@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 16:29:07 by abrabant          #+#    #+#             */
-/*   Updated: 2021/04/13 16:19:00 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/07/01 17:26:02 by aldubar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static size_t	get_flen(t_state *s, size_t nlen, bool iszero)
 
 void	conv_int(t_state *s)
 {
-	unsigned long long	n; 	
+	unsigned long long	n;
 	size_t				nlen;
 	int					prec;
 
