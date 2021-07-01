@@ -56,7 +56,7 @@ void	process_builtin(t_command *cmd, int *pipefd, int length)
 	redir_ret = make_redirections(cmd, pipefd, ttyfd, length);
 	if (length > 1)
 		minishell_fork_builtin(cmd, pipefd, ttyfd, redir_ret);
-	else (builtin != builtin_exit)
+	else if (builtin != builtin_exit)
 		g_msh.status = builtin(cmd->sv->len,
 				cmd->sv->data, false);
 	dup2(ttyfd[0], STDIN_FILENO);
