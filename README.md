@@ -1,4 +1,4 @@
-![normv3](https://github.com/busshi/philosophers/actions/workflows/norm.yml/badge.svg) ![make](https://github.com/busshi/philosophers/actions/workflows/make.yml/badge.svg)
+![normv3](https://github.com/busshi/minishell/actions/workflows/norm.yml/badge.svg) ![make](https://github.com/busshi/minishell/actions/workflows/make.yml/badge.svg)
 
 
 --- Minishell 2021 [New version] ---
