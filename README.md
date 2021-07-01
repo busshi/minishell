@@ -1,4 +1,4 @@
-![norminette](https://github.com/busshi/minishell/workflows/norminette/badge.svg)
+![norminette](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 
 --- Minishell 2021 [New version] ---
