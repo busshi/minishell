@@ -13,7 +13,8 @@
 FROM		python:3.7.9-slim
 
 RUN		apt update && python3 -m pip install --upgrade pip setuptools && \
-		python3 -m pip install norminette
+		python3 -m pip install norminette && \
+		python3 -m pip install --upgrade norminette
 
 WORKDIR		/.github/normv3
 
