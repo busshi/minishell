@@ -11,6 +11,12 @@
 #include "minishell/builtin.h"
 #include "minishell/env.h"
 
+static int	error_cd(void)
+{
+	ft_dprintf(2, "minishell: cd: too many arguments\n");
+	return (2);
+}
+
 static void	update_pwd(char *old_pwd)
 {
 	char	new_pwd[PATH_MAX];
@@ -29,7 +35,6 @@ static int	go_to_path(char *goto_path)
 	ret = chdir(goto_path);
 	if (!ret)
 		update_pwd(old_pwd);
-	else
 	{
 		ft_dprintf(2, "minishell: cd: %s: %s\n", goto_path, strerror(errno));
 		return (2);
@@ -42,13 +47,15 @@ int	builtin_cd(int argc, char *argv[], bool forked)
 	char	*goto_path;
 
 	(void)forked;
-	if (argc > 1)
+	if (argc == 2)
 	{
 		if (!ft_strcmp(argv[1], "-"))
 			goto_path = minishell_getenv("OLDPWD");
 		else
 			goto_path = argv[1];
 	}
+	else if (argc > 2)
+		return (error_cd());
 	else
 	{
 		goto_path = minishell_getenv("HOME");
