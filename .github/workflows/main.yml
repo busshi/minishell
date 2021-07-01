@@ -1,4 +1,4 @@
-name: norminette-v3
+name: norminette
 on: [push, pull_request]
 
 jobs:
