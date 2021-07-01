@@ -8,6 +8,14 @@
 #include "libft/ctype.h"
 #include "libft/io.h"
 
+static int	error_export(char *var_name)
+{
+	ft_dprintf(2, "minishell: export \"%s\": not a valid"
+		" identifier\n", var_name);
+	free(var_name);
+	return (1);
+}
+
 int	builtin_export(int argc, char *argv[], bool forked)
 {
 	char	*var_name;
@@ -20,18 +28,16 @@ int	builtin_export(int argc, char *argv[], bool forked)
 		var_name = s;
 		s = ft_strchr(s, '=');
 		if (s == NULL)
-			s = "";
+		{
+			free(s);
+			return (0);
+		}
 		else
 			*s++ = '\0';
 		if (is_valid_env_var_name(var_name) && argv[1][0] != '=')
 			minishell_setenv(var_name, s);
 		else
-		{
-			ft_dprintf(2, "minishell: export \"%s\": not a valid"
-				" identifier\n", var_name);
-			free(var_name);
-			return (1);
-		}
+			return (error_export(var_name));
 		free(var_name);
 	}
 	return (0);
