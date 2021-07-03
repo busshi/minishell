@@ -85,14 +85,12 @@ char	*minishell_getenv(const char *name)
 
 void	minishell_setenv(const char *name, char *value)
 {
-	t_stringv	*env;
 	char		*entry;
 	size_t		i;
 	size_t		name_len;
 	size_t		value_len;
 
 	i = 0;
-	env = g_msh.env;
 	name_len = ft_strlen(name);
 	value_len = ft_strlen(value);
 	entry = gc_add_global(ft_calloc(name_len + value_len + 2,
@@ -100,16 +98,17 @@ void	minishell_setenv(const char *name, char *value)
 	ft_strlcat(entry, name, name_len + 1);
 	ft_strlcat(entry, "=", name_len + 2);
 	ft_strlcat(entry, value, name_len + value_len + 2);
-	while (env->data[i] != NULL)
+	while (g_msh.env->data[i] != NULL)
 	{
-		if (ft_strncmp(env->data[i], name, name_len) == 0)
+		if (ft_strncmp(g_msh.env->data[i], name, name_len) == 0
+			&& *(g_msh.env->data[i] + name_len) == '=')
 		{
-			env->data[i] = entry;
+			g_msh.env->data[i] = entry;
 			return ;
 		}
 		++i;
 	}
-	stringv_add(env, entry);
+	stringv_add(g_msh.env, entry);
 }
 
 /*
@@ -130,7 +129,8 @@ void	minishell_unsetenv(char *var_name)
 	i = 0;
 	while (env->data[i] != NULL)
 	{
-		if (ft_strncmp(env->data[i], var_name, var_name_len) == 0)
+		if (ft_strncmp(env->data[i], var_name, var_name_len) == 0
+			&& *(env->data[i] + name_len) == '=')
 		{
 			stringv_del(env, i);
 			return ;
