@@ -130,7 +130,7 @@ void	minishell_unsetenv(char *var_name)
 	while (env->data[i] != NULL)
 	{
 		if (ft_strncmp(env->data[i], var_name, var_name_len) == 0
-			&& *(env->data[i] + name_len) == '=')
+			&& *(env->data[i] + var_name_len) == '=')
 		{
 			stringv_del(env, i);
 			return ;
