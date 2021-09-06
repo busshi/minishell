@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 18:50:40 by abrabant          #+#    #+#             */
-/*   Updated: 2021/03/28 22:22:14 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/09/07 00:07:51 by aldubar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GC_H
 
 /* abstraction */
-typedef void *t_gc;
+typedef void	*t_gc;
 
 /*
 ** Initialize a new garbage collector.

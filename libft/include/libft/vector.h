@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 12:30:11 by abrabant          #+#    #+#             */
-/*   Updated: 2021/06/27 00:24:54 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/09/07 00:08:29 by aldubar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdbool.h>
 # include "libft/internal/vector_int.h"
 
-typedef void *t_vector; /* abstraction */
+typedef void	*t_vector; /* abstraction */
 
 t_vector	*ft_vector_new(int capacity);
 

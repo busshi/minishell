@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 13:41:21 by abrabant          #+#    #+#             */
-/*   Updated: 2021/06/15 09:36:46 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/09/07 00:08:49 by aldubar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "libft/internal/string_int.h"
 
 /* abstraction */
-typedef void *t_string;
+typedef void	*t_string;
 
 /*
 ** Create a new empty t_string object with a defined capacity.

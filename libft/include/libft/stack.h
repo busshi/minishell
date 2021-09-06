@@ -6,7 +6,7 @@
 /*   By: abrabant <abrabant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 16:02:13 by abrabant          #+#    #+#             */
-/*   Updated: 2021/03/26 20:34:11 by abrabant         ###   ########.fr       */
+/*   Updated: 2021/09/07 00:08:18 by aldubar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 /* abstraction */
 
-typedef void *t_stack;
+typedef void	*t_stack;
 
 /*
 ** Create a new stack object of given size. The allocated capacity of the stack
